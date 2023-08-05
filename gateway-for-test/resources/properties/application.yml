@@ -1,0 +1,18 @@
+server:
+  port: 8071
+
+spring:
+  application:
+    name: gateway-for-test
+  cloud:
+    gateway:
+      routes:
+        - id: test-router
+          uri: http://127.0.0.1:8072/hello
+          predicates:
+            - Path=/service/**
+          filters:
+            - RewritePath=/service(?<segment>/?.*), $\{segment}
+            - name: SimpleAuth
+              args:
+                url: http://127.0.0.1:8073/auth

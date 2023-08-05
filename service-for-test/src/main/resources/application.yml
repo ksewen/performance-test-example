@@ -1,0 +1,12 @@
+server:
+  port: 8072
+
+spring:
+  application:
+    name: service-for-test
+
+logging:
+  level:
+    com:
+      github:
+        ksewen: debug

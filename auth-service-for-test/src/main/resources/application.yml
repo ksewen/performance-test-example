@@ -1,0 +1,12 @@
+server:
+  port: 8073
+
+spring:
+  application:
+    name: auth-service-for-test
+
+logging:
+  level:
+    com:
+      github:
+        ksewen: debug
