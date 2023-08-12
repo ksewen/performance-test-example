@@ -11,7 +11,7 @@ FROM openjdk:17-slim-buster
 
 RUN mkdir /service-for-test
 
-COPY --from=builder /service-for-test/target/service-for-test-0.0.1.jar /service-for-test
+COPY --from=builder /service-for-test/target/service-for-test-0.0.2.jar /service-for-test
 COPY --from=builder /service-for-test/resources/scripts/bootstrap.sh  /
 
 WORKDIR /service-for-test

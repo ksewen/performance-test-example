@@ -27,7 +27,7 @@ show_usage() {
 }
 
 IMAGE_NAME=ksewen/auth-service-for-test
-IMAGE_VERSION=0.0.1
+IMAGE_VERSION=0.0.2
 
 
 

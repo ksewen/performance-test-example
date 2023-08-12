@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   gateway:
-    image: ksewen/gateway-for-test:0.0.1
+    image: ksewen/gateway-for-test:0.0.2
     environment:
       JAVA_OPTS: -XX:InitialHeapSize=1g -XX:MaxHeapSize=1g -agentpath:/opt/jprofiler13/bin/linux-aarch64/libjprofilerti.so=port=8849,nowait
     deploy:
@@ -17,7 +17,7 @@ services:
       - test_net
 
   service:
-    image: ksewen/service-for-test:0.0.1
+    image: ksewen/service-for-test:0.0.2
     environment:
       JAVA_OPTS: -XX:InitialHeapSize=1g -XX:MaxHeapSize=1g
     deploy:
@@ -31,7 +31,7 @@ services:
       - test_net
 
   auth-service:
-    image: ksewen/auth-service-for-test:0.0.1
+    image: ksewen/auth-service-for-test:0.0.2
     environment:
       JAVA_OPTS: -XX:InitialHeapSize=1g -XX:MaxHeapSize=1g
     deploy:

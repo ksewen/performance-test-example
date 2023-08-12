@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.ksewen</groupId>
     <artifactId>service-for-test</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>service-for-test</name>
     <description>Spring Service für Performance-Test</description>
     <properties>
