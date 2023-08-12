@@ -9,7 +9,11 @@ RUN mkdir out && \
 
 FROM openjdk:17-slim-buster
 
-RUN mkdir /gateway-for-test
+RUN mkdir /gateway-for-test && \
+    apt-get update && apt-get install -y wget && \
+    cd /opt && \
+    wget https://download.ej-technologies.com/jprofiler/jprofiler_agent_linux-arm_13_0.tar.gz -O /opt/jprofiler_agent.tar.gz && \
+    tar -zvxf jprofiler_agent.tar.gz
 
 COPY --from=builder /gateway-for-test/target/gateway-for-test-0.0.1.jar /gateway-for-test
 COPY --from=builder /gateway-for-test/resources/scripts/bootstrap.sh  /

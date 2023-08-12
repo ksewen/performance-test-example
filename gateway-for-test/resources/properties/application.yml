@@ -8,11 +8,11 @@ spring:
     gateway:
       routes:
         - id: test-router
-          uri: http://127.0.0.1:8072/hello
+          uri: http://service:8072/hello
           predicates:
             - Path=/service/**
           filters:
             - RewritePath=/service(?<segment>/?.*), $\{segment}
             - name: SimpleAuth
               args:
-                url: http://127.0.0.1:8073/auth
+                url: http://auth-service:8073/auth
