@@ -79,7 +79,7 @@ In der nächsten Testrunde brauchte ich einige Tools, um die Engpässe zu finden
 ## Test mit Jprofiler
 
 (**Jprofiler**)[https://www.ej-technologies.com/products/jprofiler/overview.html] ist ein Java Profiling und Testing
-Tool. Mit dem mann eine präzise Überwachung der JVM durchführen kann, wobei Heap-Traversal, CPU-Profiling und
+Tool. Mit dem man eine präzise Überwachung der JVM durchführen kann, wobei Heap-Traversal, CPU-Profiling und
 Thread-Profiling effektive Methoden zur Lokalisierung von aktuellen Engpässen im System sind. Aber es ist ein Tool mit
 großem Funktionsumfang. Das könnte möglicherweise zu Leistungsproblemen führen und darf nicht in einer
 Produktionsumgebung verwendet werden.
@@ -87,3 +87,27 @@ Produktionsumgebung verwendet werden.
 Im Image des Gateway-Services habe ich „Jprofiler-Agent“ heruntergeladen. In der Datei „docker-compose.yml“ habe ich das
 Java Argument bereits konfiguriert.
 
+### Konfiguration
+
+Mit der Adresse „127.0.0.1:38849“ des Agents des Gateway-Services habe ich mich über die JProfiler-Anwendung
+verbindet.  
+Dann habe ich einen Call Tree Filter „com.github.ksewen“ hinzugefügt. Weil ich in diesem Fall schon gewissen, welcher
+Code am wahrscheinlichsten Probleme verursacht.
+
+**In der Praxis werde ich versuchen, die vermuteten Codeabschnitte so weit wie möglich zu überwachen.**
+
+Nach der Konfiguration habe ich auch „wrk“ benutzt, um Überwachungsdaten zu erhalten.
+
+### Analyse
+
+Im folgenden Bild kann man sehen, dass die Methode „org.springframework.web.client.RestTemplate.postForEntity“ die
+meiste Zeit in Anspruch genommen hat.  
+![cpu-views-call-tree](https://raw.githubusercontent.com/ksewen/performance-test-example/0.0.1/resources/images/cpu-views-call-tree.png
+"CPU Views - Call Tree")
+
+Es war ein offensichtliches Problem, bei dem im React-Projekt blockierende I/O von RestTemplate (HttpClient) verwendet
+wird.
+
+### Behebung
+
+Um dieses Problem zu beheben, wurde ich **WebClient** anstatt „RestTemplate“ anwenden.
