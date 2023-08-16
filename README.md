@@ -11,19 +11,19 @@ In dieser Runde des Tests habe ich das folgende Ergebnis erhalten:
 Running 5m test @ http://127.0.0.1:38071/service/hello
   5 threads and 10 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     4.63ms    5.63ms  59.35ms   87.50%
-    Req/Sec   666.07     38.83     0.88k    77.55%
+    Latency     2.47ms  772.41us  43.05ms   96.34%
+    Req/Sec   822.41     55.76     0.92k    86.56%
   Latency Distribution
-     50%    2.37ms
-     75%    2.73ms
-     90%   13.25ms
-     99%   25.87ms
-  994697 requests in 5.00m, 121.42MB read
-Requests/sec:   3314.59
-Transfer/sec:    414.32KB
+     50%    2.36ms
+     75%    2.54ms
+     90%    2.80ms
+     99%    4.65ms
+  1227963 requests in 5.00m, 149.90MB read
+Requests/sec:   4091.91
+Transfer/sec:    511.49KB
 ```
 
-Die Durchsatzrate war über **3300**. Die Zahl hat sich um 83% gestiegen.
+Die Durchsatzrate war über **4000**. Die Zahl hat sich mehr als 125 % gestiegen.
 
 ## Analyse
 

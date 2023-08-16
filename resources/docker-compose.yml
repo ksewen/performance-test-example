@@ -9,7 +9,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.00'
+          cpus: '2.00'
           memory: 2048M
     ports:
       - 38071:8071
