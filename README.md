@@ -102,7 +102,7 @@ Nach der Konfiguration habe ich auch „wrk“ benutzt, um Überwachungsdaten zu
 
 Im folgenden Bild kann man sehen, dass die Methode „org.springframework.web.client.RestTemplate.postForEntity“ die
 meiste Zeit in Anspruch genommen hat.  
-![cpu-views-call-tree](https://raw.githubusercontent.com/ksewen/Bilder/main/image-01-0.0.1-gateway-12082023-01.png
+![cpu-views-call-tree](https://raw.githubusercontent.com/ksewen/Bilder/main/202308161502917.png
 "CPU Views - Call Tree")
 
 Es war ein offensichtliches Problem, bei dem im React-Projekt blockierende I/O von RestTemplate (HttpClient) verwendet
