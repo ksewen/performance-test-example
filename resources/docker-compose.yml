@@ -5,6 +5,7 @@ services:
     image: ksewen/gateway-for-test:0.0.2
     environment:
       JAVA_OPTS: -XX:InitialHeapSize=1g -XX:MaxHeapSize=1g -agentpath:/opt/jprofiler13/bin/linux-aarch64/libjprofilerti.so=port=8849,nowait
+      JAVA_APP_ID: gateway-fot-test
     deploy:
       resources:
         limits:
