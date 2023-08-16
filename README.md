@@ -78,7 +78,7 @@ In der nächsten Testrunde brauchte ich einige Tools, um die Engpässe zu finden
 
 ## Test mit Jprofiler
 
-(**Jprofiler**)[https://www.ej-technologies.com/products/jprofiler/overview.html] ist ein Java Profiling und Testing
+[**Jprofiler**](https://www.ej-technologies.com/products/jprofiler/overview.html) ist ein Java Profiling und Testing
 Tool. Mit dem man eine präzise Überwachung der JVM durchführen kann, wobei Heap-Traversal, CPU-Profiling und
 Thread-Profiling effektive Methoden zur Lokalisierung von aktuellen Engpässen im System sind. Aber es ist ein Tool mit
 großem Funktionsumfang. Das könnte möglicherweise zu Leistungsproblemen führen und darf nicht in einer
