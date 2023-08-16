@@ -65,9 +65,9 @@ Requests/sec:   1811.16
 Transfer/sec:    226.39KB
 ```
 
-Die CPU-Auslastung des Gateways lag nur **etwas 60%**.  
-Die CPU-Auslastung des Backend-Services lag nur **etwas 20%**.  
-Die CPU-Auslastung des Auth-Services lag nur **etwas 30%**.
+Die CPU-Auslastung des Gateways lag nur **ca. 65 %**.  
+Die CPU-Auslastung des Backend-Services lag nur **ca. 20 %**.  
+Die CPU-Auslastung des Auth-Services lag nur **ca. 30 %**.
 
 Das Ergebnis von „Requests/sec“ war nur **1811.16**. Aber es konnte einen Wert **über 12000** einstellen, wenn ich den
 Backend-Service direkt zugegriffen habe. Im Zusammenhang mit dem Systemressourcenaufwand des Gateway-Services lässt sich
