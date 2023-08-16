@@ -11,7 +11,7 @@ FROM openjdk:17-slim-buster
 
 RUN mkdir /auth-service-for-test
 
-COPY --from=builder /auth-service-for-test/target/auth-service-for-test-0.0.2.jar /auth-service-for-test
+COPY --from=builder /auth-service-for-test/target/auth-service-for-test-0.0.3.jar /auth-service-for-test
 COPY --from=builder /auth-service-for-test/resources/scripts/bootstrap.sh  /
 
 WORKDIR /auth-service-for-test

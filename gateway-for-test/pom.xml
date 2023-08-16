@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.ksewen</groupId>
     <artifactId>gateway-for-test</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <name>gateway-for-test</name>
     <description>Spring Cloud Gateway für Performance-Test</description>
     <properties>

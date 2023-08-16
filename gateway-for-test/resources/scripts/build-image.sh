@@ -27,7 +27,7 @@ show_usage() {
 }
 
 IMAGE_NAME=ksewen/gateway-for-test
-IMAGE_VERSION=0.0.2
+IMAGE_VERSION=0.0.3
 
 
 
