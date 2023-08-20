@@ -68,11 +68,22 @@ Es gab keine offensichtlichen Methoden, die viel Zeit benötigen, und keine sehr
 
 ## Weitere Erklärungen
 
-### Engpass wegen „UUID“
+### Engpass wegen der Generierung von „UUID“
 
-Als ich früher bei der Arbeit solch einen Performance-Test durchgeführt habe, gab es im System ein Problem, das im
-Zusammenhang mit „UUID“ gestanden ist. Damals haben wir „Java8“ benutzt und momentan konnte ich dieses Problem in
-„Java17“ nicht mehr finden. Ich finde, dass dieses Problem wegen der Aktualisierung von Java behebt wurde.
+Wenn man Linux als Betriebssystem für den Service verwendet, die Codes in der Class
+„com.github.ksewen.performance.test.gateway.filter.tracing.TracingGlobalFilter“ vielleicht einen Engpass hat, weil in
+der Class die Method „UUID.randomUUID()“ verwendet wird.
 
-Um das Detail dieses Problems zu erkennen, beziehen Sie sich bitte auf mein anderes Projekt
-[**uuid-benchmark**](https://github.com/ksewen/uuid-benchmark).
+Zum Beispiel habe ich ohne die Spezifikation von der Class „SecureRandom“ den Gateway-Service ausgeführt, konnte ich im
+Test solche Blockierung finden.
+
+![Blockierung-1](https://raw.githubusercontent.com/ksewen/Bilder/main/202308201438817.png)
+![Blockierung-2](https://raw.githubusercontent.com/ksewen/Bilder/main/202308201439720.png)
+
+![Statistik der Blockierung](https://raw.githubusercontent.com/ksewen/Bilder/main/202308201439000.png)
+
+Um dieses Problem zu umgehen, habe ich folgende Option verwendet, als ich Docker-Image erstellt habe.
+
+```shell
+-Djava.security.egd=file:/dev/urandom
+```
