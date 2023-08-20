@@ -87,3 +87,6 @@ Um dieses Problem zu umgehen, habe ich folgende Option verwendet, als ich Docker
 ```shell
 -Djava.security.egd=file:/dev/urandom
 ```
+
+Um die Benchmark der Generierung von „UUID“ zu testen, beziehen Sie sich bitte auf mein anderes Projekt
+[**uuid-benchmark**](https://github.com/ksewen/uuid-benchmark).
